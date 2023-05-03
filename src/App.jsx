@@ -1,11 +1,14 @@
-// import Component from './components/Component'
-import EventsPage from "./pages/EventsPage";
+import AppRouter from "./router/AppRouter";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 const App = () => {
-  return <EventsPage />;
+  return (
+    <>
+      <AppRouter />
+    </>
+  );
 };
 
 export default App;
