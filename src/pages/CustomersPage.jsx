@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import Carga from "../components/Carga";
 
 // const clientes = [
 //   {
@@ -19,19 +20,26 @@ const clientes = [];
 
 const CustomersPage = () => {
   const [customers, setCustomers] = useState(clientes);
+  const [loading, setLoading] = useState(false);
 
   const handleGetCustomers = async () => {
+    setLoading(true);
     const resp = await axios.get(
       "https://ucamp-api.onrender.com/api/v1/customers"
     );
     setCustomers(resp.data.data);
+    setLoading(false);
   };
 
   return (
     <>
-      <button className="btn btn-info" onClick={handleGetCustomers}>
-        Obtener clientes
-      </button>
+      {loading ? (
+        <Carga />
+      ) : (
+        <button className="btn btn-info" onClick={handleGetCustomers}>
+          Obtener clientes
+        </button>
+      )}
       <table className="table">
         <thead>
           <tr>

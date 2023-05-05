@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 
 const Header = (props) => {
   return (
-    <>
-      <div>Header</div>
+    <header className="row col">
+      <h1>Header</h1>
       <p>Estas en la pagina {props.titulo}</p>
       <p>{props.tema}</p>
       <p>Tu fruta favorita es: {props.fruta}</p>
       <div>{props.subtitulo}</div>
-    </>
+    </header>
   );
 };
 

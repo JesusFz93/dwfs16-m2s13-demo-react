@@ -1,8 +1,10 @@
 const Footer = () => {
   return (
-    <>
-      <div>Footer</div>
-    </>
+    <footer className="row">
+      <article className="col">
+        <div>Footer</div>
+      </article>
+    </footer>
   );
 };
 
